@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.astroapi</groupId>
+	<artifactId>app</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>astroapi</name>
+	
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+	
+
+	<dependencies>
+	   <dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		 </dependency>
+	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jooq</artifactId>
+		</dependency>
+		<dependency>
+   <groupId>mysql</groupId>
+   <artifactId>mysql-connector-java</artifactId>
+  </dependency>
+  
+    <dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.4</version>
+    </dependency>
+    
+		
+		<dependency>
+		  <groupId>org.jooq</groupId>
+		  <artifactId>jooq</artifactId>
+	  </dependency>
+		<dependency>
+		  <groupId>org.jooq</groupId>
+		  <artifactId>jooq-meta</artifactId>
+		  </dependency>
+		<dependency>
+		  <groupId>org.jooq</groupId>
+		  <artifactId>jooq-codegen</artifactId>
+	  </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.junit.vintage</groupId>
+        <artifactId>junit-vintage-engine</artifactId>
+        <scope>test</scope>
+    </dependency>
+		<!-- 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+		<dependency>
+		    <groupId>javax.activation</groupId>
+		    <artifactId>activation</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+		<dependency>
+		    <groupId>joda-time</groupId>
+		    <artifactId>joda-time</artifactId>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		</dependency>
+		
+		
+		<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+		<dependency>
+		    <groupId>com.sun.mail</groupId>
+		    <artifactId>javax.mail</artifactId>
+		    <version>1.6.2</version>
+		</dependency>
+	</dependencies>
+	
+	<!-- <generator>
+          <name>org.jooq.codegen.JavaGenerator</name>
+      
+          <database>
+            The database type. The format here is:
+                 org.jooq.meta.[database].[database]Database
+            <name>org.jooq.util.mysql.MySQLDatabase</name>
+      
+            The database schema (or in the absence of schema support, in your RDBMS this
+                 can be the owner, user, database name) to be generated
+            <inputSchema>Java</inputSchema>
+      
+            All elements that are generated from your schema
+                 (A Java regular expression. Use the pipe to separate several expressions)
+                 Watch out for case-sensitivity. Depending on your database, this might be important!
+            <includes>.*</includes>
+      
+            All elements that are excluded from your schema
+                 (A Java regular expression. Use the pipe to separate several expressions).
+                 Excludes match before includes, i.e. excludes have a higher priority
+            <excludes></excludes>
+          </database>
+      
+          <target>
+            The destination package of your generated classes (within the destination directory)
+            <packageName>com.example</packageName>
+      
+            The destination directory of your generated classes. Using Maven directory layout here
+            <directory>/Users/trevorlandreneau/development/eclipse-workspace/demo/target</directory>
+          </target>
+        </generator>
+	 -->
+	<!-- <configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.12.1.xsd">
+  <generator>
+    Optional: The fully qualified class name of the code generator.
+    <name>...</name>
+    
+    Optional: The fully qualified class name of the generator strategy.
+    <strategy>...</strategy>
+    
+    Optional: The jooq-meta configuration, configuring the information schema source.
+    <database>...</database>
+    
+    Optional: The jooq-codegen configuration, configuring the generated output content.
+    <generate>...</generate>
+    
+    Optional: The generation output target 
+    <target>demo/target</target>
+  </generator>
+</configuration> -->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			 <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-surefire-plugin</artifactId>
+           <configuration>
+				        <reuseForks>false</reuseForks>
+				        <forkCount>1</forkCount>
+				    </configuration>
+       </plugin>
+			
+     <!-- Configure the database connection here -->
+      <plugin>
+        <groupId>org.jooq</groupId>
+        <artifactId>jooq-codegen-maven</artifactId>
+        <!-- The plugin should hook into the generate goal -->
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <dependencies/>
+
+        <configuration>
+          <jdbc>
+            <driver>com.mysql.cj.jdbc.Driver</driver>
+            <url>jdbc:mysql://localhost:3306/Java?serverTimezone=UTC</url>
+            <user>root</user>
+            <password></password>
+          </jdbc>
+
+          <generator>
+            <database>
+              <name>org.jooq.meta.mysql.MySQLDatabase</name>
+              <includes>.*</includes>
+              <excludes></excludes>
+              <inputSchema>Java</inputSchema>
+            </database>
+            <target>
+            <packageName>com.example.db</packageName>
+            <directory>src/main/java</directory>
+          </target>
+          </generator>
+        </configuration>
+      </plugin>
+              
+      <!-- </configuration>
+			  <groupId>org.jooq</groupId>
+			  <artifactId>jooq-codegen-maven</artifactId>
+			  <executions>
+			    <execution>
+			      <id>jooq-codegen</id>
+			      <phase>generate-sources</phase>
+			      <goals>
+			        <goal>generate</goal>
+			      </goals>
+			      
+			    </execution>
+			  </executions> -->
+		<!--	</plugin> -->
+		</plugins>
+	</build>
+
+</project>
